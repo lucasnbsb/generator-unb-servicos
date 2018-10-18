@@ -1,19 +1,19 @@
 {
   "name": "generator-unb-servicos",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "gera todos os arquivos para uma entidade do back end do unb-servicos",
-  "homepage": "",
+  "homepage": "https://github.com/lucasnbsb/generator-unb-servicos",
   "author": {
     "name": "Lucas Neto Moreira",
     "email": "lucasnbsb@gmail.com",
-    "url": ""
+    "url": "https://github.com/lucasnbsb/"
   },
   "files": [
     "generators"
   ],
   "main": "generators/index.js",
   "keywords": [
-    "",
+    "unb",
     "yeoman-generator"
   ],
   "devDependencies": {
