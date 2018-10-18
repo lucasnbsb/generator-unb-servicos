@@ -1,4 +1,4 @@
-# generator-unb-servicos [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# generator-unb-servicos
 > gera todos os arquivos para uma entidade do back end do unb-servicos
 
 ## Installation
