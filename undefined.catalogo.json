@@ -1,0 +1,81 @@
+[
+	{
+		"name" : "atribuicaoFind",
+		"comment": "Buscar entidades no banco de dados",
+		"owner": "unb_servicos",
+		"version": "1.0.0",
+		"service" : "br.unb.academico.facade.sipic/atribuicaoFacade:find",
+		"url": "/academico/sipic/atribuicao",
+		"type": "GET",
+		"lang": "java",
+		"querystring": [
+			{
+				"name": "filter",
+				"type": "string",
+				"default" : "",
+				"comment": "Filtro principal da pesquisa"
+			},
+			{
+				"name": "fields",
+				"type": "string",
+				"default" : "",
+				"comment": "Campos que devem ser retornados na pesquisa"
+			},
+			{
+				"name": "offset",
+				"type": "int",
+				"default" : "0",
+				"comment": "Limite inicial do paginador"
+			},
+			{
+				"name": "limit",
+				"type": "int",
+				"default" : "100",
+				"comment": "Limite final do paginador"
+			},
+			{
+				"name": "sort",
+				"type": "string",
+				"default" : "",
+				"comment": "Campos que devem ser ordenados"
+			}
+		]
+	},
+	{
+	    "name": "atribuicaoInsert",
+		"comment": "atualiza entidade no banco",
+		"owner": "unb_servicos",
+		"version": "1",
+		"service" : "br.unb.academico.facade.sipic/atribuicaoFacade:insert",
+        "url": "/academico/sipic/atribuicao",
+		"type": "POST",		
+		"lang": "java"
+	},
+	
+	{
+		"name" : "atribuicaoDelete",
+		"comment": "Remover entidade do banco",
+		"owner": "unb_servicos",
+		"version": "1.0.0",
+		"service" : "br.unb.academico.facade.sipic/atribuicaoFacade:delete",
+		"url": "/academico/sipic/atribuicao:id",
+		"type": "DELETE",
+		"lang": "java",
+		"content_type" : "json",
+		"timeout": 10000
+	},
+	
+	{
+		"name" : "atribuicaoUpdate",
+		"comment": "Atualizar atribuições das inscrições para os avaliadores",
+		"owner": "unb_servicos",
+		"version": "1.0.0",
+		"service" : "br.unb.academico.facade.sipic/atribuicaoFacade:update",
+		"url": "/academico/sipic/atribuicao:id",
+		"type": "PUT",
+		"lang": "java",
+		"content_type" : "json",
+		"authorization" : "public",
+		"timeout": 10000		
+	}
+]

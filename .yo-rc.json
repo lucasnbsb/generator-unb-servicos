@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Lucas Neto Moreira",
+      "authorEmail": "lucasnbsb@gmail.com",
+      "authorUrl": ""
+    }
+  }
+}
