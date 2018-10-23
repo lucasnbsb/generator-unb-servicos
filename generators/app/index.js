@@ -4,7 +4,7 @@ const yosay = require('yosay');
 //const chalk = require('chalk');
 
 module.exports = class extends Generator {
-  
+
   prompting() {
     // Have Yeoman greet the user.
     this.log(
@@ -45,12 +45,21 @@ module.exports = class extends Generator {
 
   writing() {
     let nome = this.props.nome.toLowerCase();
+    let nomeTitleCase = this.props.nome.split(/(?=[A-Z])/).map(
+      s => {
+        s = s.toLowerCase()
+        s = s.replace('-', '')
+        s = s.replace('_', '')
+        return s.slice(0, 1).toUpperCase() + s.slice(1)
+      }
+    ).filter(r => r == '' ? null : r).join('')
+    
     let area = this.props.area;
     let subarea = this.props.subarea;
     let url = '/' + area;
 
     //Preparando os parametros para a geracao dos arquivos
-    let nomeTitleCase = this._toTitleCase(nome);
+    //let nomeTitleCase = this._toTitleCase(nome);
 
     let facadePath = 'br.unb.' + area + '.facade';
     let applicationClass = '';
@@ -72,7 +81,7 @@ module.exports = class extends Generator {
 
     this.fs.copyTpl(
       this.templatePath('catalogo.json'),
-      this.destinationPath('catalogo_'+nome+'.json'),
+      this.destinationPath('catalogo_' + nome + '.json'),
       {
         nomeTitleCase: nomeTitleCase,
         facadePath: facadePath,
