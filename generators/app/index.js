@@ -115,8 +115,8 @@ module.exports = class extends Generator {
     )
 
     this.fs.copyTpl(
-      this.templatePath('infra.java'),
-      this.destinationPath(nomeTitleCase + 'Infra.java'),
+      this.templatePath('repository.java'),
+      this.destinationPath(nomeTitleCase + 'Repository.java'),
       {
         nomeTitleCase: nomeTitleCase,
         modelPath: modelPath,

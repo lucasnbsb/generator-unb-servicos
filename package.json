@@ -1,6 +1,6 @@
 {
   "name": "generator-unb-servicos",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "gera todos os arquivos para uma entidade do back end do unb-servicos",
   "homepage": "https://github.com/lucasnbsb/generator-unb-servicos",
   "author": {

@@ -12,6 +12,10 @@ public class <%-nomeTitleCase%>Service {
 	public List<<%-nomeTitleCase%>> find(String filter, String fields, int limit, int offset, String sort) {
 		return <%-infraClass%>.getInstance().get<%-nomeTitleCase%>Repository().find(filter, fields, limit, offset, sort);
 	}
+
+	public <%-nomeTitleCase%> findById(Integer id) {
+		return <%-infraClass%>.getInstance().get<%-nomeTitleCase%>Repository().findById(id);
+	}
 	
 	public <%-nomeTitleCase%> update(<%-nomeTitleCase%> obj) {
 		return <%-infraClass%>.getInstance().get<%-nomeTitleCase%>Repository()
