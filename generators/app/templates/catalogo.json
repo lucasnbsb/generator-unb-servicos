@@ -62,7 +62,7 @@
 		"url": "<%- url%>:id",
 		"type": "DELETE",
 		"lang": "java",
-		"content_type" : "json",
+		"content_type" : "application/json",
 		"timeout": 10000
 	},
 	
@@ -75,7 +75,7 @@
 		"url": "<%- url%>:id",
 		"type": "PUT",
 		"lang": "java",
-		"content_type" : "json",
+		"content_type" : "application/json",
 		"authorization" : "public",
 		"timeout": 10000		
 	}

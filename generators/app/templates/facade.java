@@ -24,6 +24,11 @@ public class <%-nomeTitleCase%>Facade extends EmsServiceFacade {
 			.get<%-nomeTitleCase%>Service().find(filter, fields, limit, offset, sort);
 	}
 	
+	public <<%-nomeTitleCase%>> findById(IEmsRequest request){
+		int id = request.getParamAsInt("id");
+		return <%-applicationClass%>.getInstance().get<%-nomeTitleCase%>Service().findById(id);
+	}
+
 	public <%-nomeTitleCase%> update(IEmsRequest request) {
 		int id = request.getParamAsInt("id");
 		<%-nomeTitleCase%> <%-nome%> = <%-applicationClass%>.getInstance().get<%-nomeTitleCase%>Service().findById(id);
