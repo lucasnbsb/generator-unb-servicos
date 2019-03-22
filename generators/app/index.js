@@ -1,9 +1,10 @@
 'use strict';
 const Generator = require('yeoman-generator');
 const yosay = require('yosay');
+var _ = require('lodash');
 //const chalk = require('chalk');
 
-module.exports = class extends Generator {
+module.exports = class extends Generator {  
 
   prompting() {
     // Have Yeoman greet the user.
@@ -53,7 +54,9 @@ module.exports = class extends Generator {
         return s.slice(0, 1).toUpperCase() + s.slice(1)
       }
     ).filter(r => r == '' ? null : r).join('')
-    
+    let nomeVariableCase = _.lowerFirst(nomeTitleCase);
+
+
     let area = this.props.area;
     let subarea = this.props.subarea;
     let url = '/' + area;
@@ -121,6 +124,19 @@ module.exports = class extends Generator {
         nomeTitleCase: nomeTitleCase,
         modelPath: modelPath,
         infraPath: infraPath,
+      }
+    )
+
+    this.fs.copyTpl(
+      this.templatePath('complementos.java'),
+      this.destinationPath(nomeTitleCase + 'Complementos.java'),
+      {
+        nomeTitleCase: nomeTitleCase,
+        nomeVariableCase: nomeVariableCase,
+        modelPath: modelPath,
+        servicePath: servicePath,
+        infraPath: infraPath,
+        infraClass: infraClass,
       }
     )
 

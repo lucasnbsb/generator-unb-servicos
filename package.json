@@ -1,6 +1,6 @@
 {
   "name": "generator-unb-servicos",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "gera todos os arquivos para uma entidade do back end do unb-servicos",
   "homepage": "https://github.com/lucasnbsb/generator-unb-servicos",
   "author": {
@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "chalk": "^2.1.0",
+    "lodash": "^4.17.11",
     "mocha": "^5.2.0",
     "yeoman-generator": "^2.0.1",
     "yosay": "^2.0.1"
