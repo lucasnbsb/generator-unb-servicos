@@ -54,11 +54,23 @@ module.exports = class extends Generator {
         return s.slice(0, 1).toUpperCase() + s.slice(1)
       }
     ).filter(r => r == '' ? null : r).join('')
+
+    let nomeDashCase = this.props.nome.split(/(?=[A-Z])/).map(
+      s => {
+        s = s.toLowerCase()
+        s = s.replace('-', '')
+        s = s.replace('_', '')
+        return s.slice(0, 1) + s.slice(1)
+      }
+    ).filter(r => r == '' ? null : r).join('-')
+
     let nomeVariableCase = _.lowerFirst(nomeTitleCase);
-
-
+    let nomeLowerCase = _.toLower(nomeTitleCase);
     let area = this.props.area;
     let subarea = this.props.subarea;
+    let areaLower = _.toLower(area)
+    let subLower = _.toLower(subarea)
+
     let url = '/' + area;
 
     //Preparando os parametros para a geracao dos arquivos
@@ -137,6 +149,23 @@ module.exports = class extends Generator {
         servicePath: servicePath,
         infraPath: infraPath,
         infraClass: infraClass,
+      }
+    )
+
+    this.fs.copyTpl(
+      this.templatePath('angularService.ts'),
+      this.destinationPath(nomeDashCase + '.service.ts'),
+      {
+        nomeTitleCase: nomeTitleCase,
+        nomeVariableCase: nomeVariableCase,
+        nomeLowerCase: nomeLowerCase,
+        areaLower: areaLower,
+        subLower: subLower,
+        modelPath: modelPath,
+        servicePath: servicePath,
+        infraPath: infraPath,
+        infraClass: infraClass,
+        nomeDashCase: nomeDashCase
       }
     )
 

@@ -43,6 +43,17 @@
 	},
 	
 	{
+		"name": "<%- nomeTitleCase%>FindByID",
+		"comment": "busca por id no banco",
+		"owner": "unb_servicos",
+		"version": "1",
+		"service" : "<%- facadePath%>.<%- nomeTitleCase%>Facade:findById",
+		"url": "<%- url%>:id",
+		"type": "GET",		
+		"lang": "java"
+	},
+
+	{
 	    "name": "<%- nomeTitleCase%>Insert",
 		"comment": "atualiza entidade no banco",
 		"owner": "unb_servicos",
