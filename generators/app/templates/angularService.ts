@@ -28,8 +28,8 @@ export class <%-nomeTitleCase%>Service extends ServiceUtil {
     return this.httpService.post(this.url, JSON.stringify(filter))
   }
 
-  public update(filter: <%-nomeTitleCase%>){
-    return this.httpService.put(this.url, JSON.stringify(filter));
+  public update(filter: <%-nomeTitleCase%>, id: number){
+    return this.httpService.put(this.url + id, JSON.stringify(filter));
   }
   
   public delete(id: number){
