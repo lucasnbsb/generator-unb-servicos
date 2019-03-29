@@ -17,7 +17,7 @@ export class <%-nomeTitleCase%>Service extends ServiceUtil {
   ) { super(); }
 
   public find(filter: <%-nomeTitleCase%>){
-    return this.httpService.get(this.url + JSON.stringify(filter));
+    return this.httpService.get(this.url +'?filter='+ JSON.stringify(filter));
   }
 
   public findById(id: number){
