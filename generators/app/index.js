@@ -9,7 +9,7 @@ module.exports = class extends Generator {
   prompting() {
     // Have Yeoman greet the user.
     this.log(
-      yosay('Vamos criar sua entidade pro Unb-Servicos??? v1.2.1')
+      yosay('Vamos criar sua entidade pro Unb-Servicos??? v1.2.4')
     );
 
     const prompts = [
